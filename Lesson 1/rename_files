@@ -1,0 +1,32 @@
+import os
+ 
+
+def rename_files():
+    #Step 1 : Get file names from a folder
+    file_list = os.listdir(r"F:\Anuj\Study & Work\Python programming\prank")
+    print(file_list)
+
+    #Step 2: Remove all the numbers from the filenames
+    saved_path = os.getcwd()
+    print("Old working directory is"+saved_path)
+
+    os.chdir(r"F:\Anuj\Study & Work\Python programming\prank")
+    new_saved_path = os.getcwd()
+    print("New working directory is"+new_saved_path)
+
+    for file_name in file_list:
+        os.rename(file_name,file_name.translate(None,"0123456789"))
+
+    file_list = os.listdir(r"F:\Anuj\Study & Work\Python programming\prank")
+    print(file_list)
+ 
+    #file_name = io.open(r"F:\Anuj\Study & Work\Python programming\prank\madrid.jpg",os.O_RDWR)  
+    #print(file_name) 
+
+    #file_list = os.listdir(r"F:\Anuj\Study & Work\Python programming\prank\madrid.jpg")
+    #print(file_list)      
+
+     
+
+rename_files() 
+  
